@@ -1,0 +1,24 @@
+{
+  "name": "eazymeeting-restapi",
+  "version": "1.1.2",
+  "description": "Eazymeeting REST APIs is an collection of APIs used to integrate Eazymeeting with any external system.",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon ./app/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Eazymeeting, Node.js, Express"
+  ],
+  "author": "Om Srivastava",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "node-input-validator": "^4.3.2"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.7"
+  }
+}
