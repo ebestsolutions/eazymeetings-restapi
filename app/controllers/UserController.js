@@ -20,7 +20,7 @@ const signup = async (req, res) => {
 
         const shellCommand = `docker exec greenlight-v2 bundle exec rake user:create["${data.name}","${data.email}","${data.password}","${data.role}"]`;
 
-        exec(shellCommand, (err, stdout, stderr) => {
+        exec(shellCommand, { cwd: '/root/greenlight' }, (err, stdout, stderr) => {
             if (err) {
                 console.error(`Error in executing command: ${err}`)
 

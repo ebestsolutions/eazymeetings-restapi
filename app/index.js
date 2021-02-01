@@ -1,22 +1,22 @@
-const BodyParser = require('body-parser')
-const Compression = require('compression')
-const Cors = require('cors')
-const Express = require('express')
-const Helmet = require('helmet')
+const bodyParser = require('body-parser')
+const compression = require('compression')
+const cors = require('cors')
+const express = require('express')
+const helmet = require('helmet')
 
 const config = require('./config/index.js')
 
 const routes = require('./routes/index.js')
 
-const app = Express()
+const app = express()
 
-app.use(Cors(config.corsOptionsDelegate))
-app.use(Compression())
-app.use(Helmet())
+app.use(cors(config.corsOptionsDelegate))
+app.use(compression())
+app.use(helmet())
 
-app.use('/api/v1', BodyParser.json())
+app.use('/api/v1', bodyParser.json())
 app.use('/api/v1', routes)
-app.use('/', BodyParser.urlencoded({ extended: false }))
+app.use('/', bodyParser.urlencoded({ extended: false }))
 
 app.use((err, req, res, next) => {
     console.error(err.stack)
