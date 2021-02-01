@@ -33,10 +33,15 @@ const signup = async (req, res) => {
                 return res.status(500).json({ error: stderr })
             }
 
+            console.log(`Success: ${stdout}`)
+
             return res.status(200).json({
-                name: data.name,
-                email: data.email,
-                role: data.role,
+                message: stdout,
+                data: {
+                    name: data.name,
+                    email: data.email,
+                    role: data.role,
+                },
             })
         })
     } catch (error) {
