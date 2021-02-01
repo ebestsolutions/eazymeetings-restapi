@@ -1,13 +1,20 @@
-import Express from 'express'
 import BodyParser from 'body-parser'
-// import Dotenv from 'dotenv'
+import Compression from 'compression'
+import Cors from 'cors'
+import Express from 'express'
+import Helmet from 'helmet'
 
-import config from './config/index.js'
+import config, {
+    corsOptionsDelegate,
+} from './config/index.js'
+
 import routes from './routes/index.js'
 
 const app = Express()
 
-// Dotenv.config()
+app.use(Cors(corsOptionsDelegate))
+app.use(Compression())
+app.use(Helmet())
 
 app.use('/api/v1', BodyParser.json())
 app.use('/api/v1', routes)
