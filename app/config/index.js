@@ -1,8 +1,8 @@
-import Dotenv from 'dotenv'
+const dotenv = require('dotenv')
 
-Dotenv.config()
+dotenv.config()
 
-export const corsOptionsDelegate = (req, callback) => {
+const corsOptionsDelegate = (req, callback) => {
     const corsOptions = { origin: (process.env.WHITELIST.indexOf(req.header('Origin')) !== -1) }
 
     console.log('corsOptions: ', corsOptions)
@@ -10,7 +10,8 @@ export const corsOptionsDelegate = (req, callback) => {
     callback(null, corsOptions)
 }
 
-export default {
+module.exports = {
     site_name: process.env.SITE_NAME,
     port: process.env.PORT,
+    corsOptionsDelegate,
 }

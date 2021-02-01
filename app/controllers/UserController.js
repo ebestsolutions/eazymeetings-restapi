@@ -1,5 +1,5 @@
-import { Validator } from 'node-input-validator'
-import { exec } from 'child_process'
+const { Validator } = require('node-input-validator')
+const { exec } = require('child_process')
 
 const signup = async (req, res) => {
     const data = req.body
@@ -46,4 +46,4 @@ const signup = async (req, res) => {
     }
 }
 
-export default { signup }
+module.exports = { signup }

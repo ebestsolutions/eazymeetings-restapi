@@ -2,7 +2,6 @@
   "name": "eazymeeting-restapi",
   "version": "1.1.2",
   "description": "Eazymeeting REST APIs is an collection of APIs used to integrate Eazymeeting with any external system.",
-  "type": "module",
   "scripts": {
     "start": "nodemon ./app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"

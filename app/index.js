@@ -1,18 +1,16 @@
-import BodyParser from 'body-parser'
-import Compression from 'compression'
-import Cors from 'cors'
-import Express from 'express'
-import Helmet from 'helmet'
+const BodyParser = require('body-parser')
+const Compression = require('compression')
+const Cors = require('cors')
+const Express = require('express')
+const Helmet = require('helmet')
 
-import config, {
-    corsOptionsDelegate,
-} from './config/index.js'
+const config = require('./config/index.js')
 
-import routes from './routes/index.js'
+const routes = require('./routes/index.js')
 
 const app = Express()
 
-app.use(Cors(corsOptionsDelegate))
+app.use(Cors(config.corsOptionsDelegate))
 app.use(Compression())
 app.use(Helmet())
 
