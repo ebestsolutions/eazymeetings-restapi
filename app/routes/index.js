@@ -9,6 +9,13 @@ router.get('/', (req, res) => {
     res.send('Eazy Meetings REST APIs!')
 })
 
-router.post('/signup', UserController.signup)
+// User Signup
+router.post('/signup', UserController.create)
+
+// Get users list
+router.get('/users', UserController.list)
+
+// Get a user
+router.get('/users/:uid', UserController.get)
 
 module.exports = router

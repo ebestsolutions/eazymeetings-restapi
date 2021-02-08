@@ -13,5 +13,6 @@ const corsOptionsDelegate = (req, callback) => {
 module.exports = {
     site_name: process.env.SITE_NAME,
     port: process.env.PORT,
+    dbURL: process.env.DB_URL,
     corsOptionsDelegate,
 }
