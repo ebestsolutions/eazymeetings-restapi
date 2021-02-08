@@ -68,12 +68,12 @@ const list = async (req, res) => {
             return res.status(422).json({ errors: v.errors })
         }
 
-        console.log(`data: ${JSON.stringify(req.query)}`);
-
         let sql = 'SELECT id, room_id, username, uid, name FROM users';
 
         if (data.ordering) {
             sql += ` ORDER BY ${data.ordering} `;
+        } else {
+            sql += ` ORDER BY id ASC `;
         }
 
         if (data.offset && data.limit) {
