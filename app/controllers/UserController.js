@@ -56,7 +56,7 @@ const list = async (req, res) => {
     const data = req.params
 
     const v = new Validator(req.params, {
-        limit: 'integer',
+        limit: 'required|integer',
         offset: 'integer',
         ordering: 'string',
     })
@@ -68,7 +68,7 @@ const list = async (req, res) => {
             return res.status(422).json({ errors: v.errors })
         }
 
-        console.log(`data: ${JSON.stringify(req)}`);
+        console.log(`data: ${JSON.stringify(req.params)}`);
 
         let sql = 'SELECT id, room_id, username, uid, name FROM users';
 
