@@ -108,7 +108,7 @@ const list = async (req, res) => {
     }
 }
 
-const get = = async (req, res) => {
+const get = async (req, res) => {
     const data = req.params
 
     const v = new Validator(req.params, { uid: 'required|string' })
