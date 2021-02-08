@@ -53,9 +53,9 @@ const create = async (req, res) => {
 }
 
 const list = async (req, res) => {
-    const data = req.params
+    const data = req.query
 
-    const v = new Validator(req.params, {
+    const v = new Validator(req.query, {
         limit: 'required|integer',
         offset: 'integer',
         ordering: 'string',
@@ -68,7 +68,7 @@ const list = async (req, res) => {
             return res.status(422).json({ errors: v.errors })
         }
 
-        console.log(`data: ${JSON.stringify(req.params)}`);
+        console.log(`data: ${JSON.stringify(req.query)}`);
 
         let sql = 'SELECT id, room_id, username, uid, name FROM users';
 
