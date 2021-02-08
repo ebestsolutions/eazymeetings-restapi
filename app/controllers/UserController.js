@@ -79,7 +79,7 @@ const list = async (req, res) => {
         if (data.offset && data.limit) {
             sql += ` offset ${data.offset} limit ${data.limit} `;
         } else if (data.limit) {
-            sql += ' limit ${data.limit} ';
+            sql += ` limit ${data.limit} `;
         }
 
         sql += ';';
