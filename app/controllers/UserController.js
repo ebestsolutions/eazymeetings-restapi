@@ -82,6 +82,8 @@ const list = async (req, res) => {
 
         sql += ';';
 
+        console.log(`SQL: ${sql}`);
+
         const shellCommand = `docker exec greenlight-v2 psql "${config.dbURL}" -c "${sql}"`;
 
         exec(shellCommand, { cwd: '/root/greenlight' }, (err, stdout, stderr) => {
@@ -121,6 +123,8 @@ const get = async (req, res) => {
         }
 
         let sql = `SELECT id, room_id, username, uid, name FROM users WHERE uid = ${data.uid};`;
+
+        console.log(`SQL: ${sql}`);
 
         const shellCommand = `docker exec greenlight-v2 psql "${config.dbURL}" -c "${sql}"`;
 
