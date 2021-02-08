@@ -56,7 +56,7 @@ const list = async (req, res) => {
     const data = req.query
 
     const v = new Validator(req.query, {
-        limit: 'required|integer',
+        limit: 'integer',
         offset: 'integer',
         ordering: 'string',
     })
