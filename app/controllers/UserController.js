@@ -68,7 +68,7 @@ const list = async (req, res) => {
             return res.status(422).json({ errors: v.errors })
         }
 
-        console.log(`data: ${data}`);
+        console.log(`data: ${JSON.stringify(data)}`);
 
         let sql = 'SELECT id, room_id, username, uid, name FROM users';
 
