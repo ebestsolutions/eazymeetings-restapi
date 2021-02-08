@@ -102,8 +102,9 @@ const list = async (req, res) => {
             }
 
             console.log(`Success: ${stdout}`)
+            const list = stdout.split('\n')
 
-            return res.status(200).json({ message: stdout })
+            return res.status(200).json({ message: stdout, list })
         })
     } catch (error) {
         return res.status(500).json({
